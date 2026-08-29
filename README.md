@@ -2,6 +2,8 @@
 
 Status: baseline scaffold complete (2026-08-27). This repository provides a Windows/PowerShell-friendly, passive-only, evidence-driven Codex project layout. The verified `badchars/osint-mcp-server` integration is enabled as an optional local Docker build; other optional integrations remain disabled until their source, transport, and safety are re-verified.
 
+Repository policy: see [CONTRIBUTING.md](CONTRIBUTING.md) for the squash-merge workflow and contribution boundaries, [SECURITY.md](SECURITY.md) for private vulnerability reporting, and [repository hygiene notes](docs/repository-hygiene.md) for licensing and generated-audit-artifact decisions. The project license is intentionally unselected pending an explicit maintainer decision.
+
 ## Local environment
 
 | Item | Verified result |

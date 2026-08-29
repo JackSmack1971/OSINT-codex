@@ -1,0 +1,21 @@
+name: Support question
+description: Ask a setup or usage question
+title: "[Support] "
+body:
+  - type: markdown
+    attributes:
+      value: Do not include secrets, cookies, private case data, or target details.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Describe the issue and the outcome you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and checks
+      description: Include sanitized versions, commands, and relevant output.
+    validations:
+      required: true

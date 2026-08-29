@@ -12,6 +12,7 @@ cases/*/
 *.cache
 __pycache__/
 .codex/.state/
+.repository-hygiene/
 
 # Local runtime state, caches, databases, and build output.
 .codex/.cache/
