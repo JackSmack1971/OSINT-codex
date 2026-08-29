@@ -1,0 +1,16 @@
+{
+  "finding_id": "F-0001",
+  "case_id": "CASE-YYYYMMDD-HHMMSS-target",
+  "timestamp_utc": "2026-08-27T17:00:00Z",
+  "agent": "domain-infra",
+  "statement": "Evidence-backed claim, or exactly 'no data found' when the approved source returned no usable evidence.",
+  "classification": "observed",
+  "confidence": "medium",
+  "confidence_score": 0.5,
+  "source_ids": ["SRC-0001"],
+  "tool": "passive-tool-name",
+  "evidence_path": "raw/example.json",
+  "rationale": "Explain reliability, directness, freshness, independence, consistency, contradictions, and alternative explanations. Do not count repeated tools as independent corroboration.",
+  "contradictions": [],
+  "notes": "Keep personal data minimized and secrets redacted. Identity attribution requires more than username reuse."
+}

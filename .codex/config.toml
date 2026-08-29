@@ -1,0 +1,63 @@
+# Project-local Codex configuration. Project config is loaded only for trusted projects.
+model = "gpt-5.3-codex"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+# This project requires trust before this file, its hooks, and its agents load.
+# Keep OpenAI Developer Docs MCP configuration separate from OSINT case data.
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 4
+default_subagent_model = "gpt-5.3-codex"
+default_subagent_reasoning_effort = "medium"
+interrupt_message = true
+
+[[skills.config]]
+path = "../.agents/skills/authorize/SKILL.md"
+enabled = true
+
+[[skills.config]]
+path = "../.agents/skills/osint/SKILL.md"
+enabled = true
+
+[[skills.config]]
+path = "../.agents/skills/osint-status/SKILL.md"
+enabled = true
+
+# Optional integrations are registered only after transport, provenance, and
+# safety properties are verified. See README.md.
+
+[mcp_servers.badchars_osint]
+enabled = true
+required = false
+command = "powershell"
+args = ["-NoProfile", "-File", "scripts/invoke-mcp.ps1"]
+startup_timeout_sec = 120
+tool_timeout_sec = 120
+default_tools_approval_mode = "prompt"
+disabled_tools = []
+enabled_tools = [
+  "dns_lookup",
+  "dns_reverse",
+  "dns_email_security",
+  "dns_spf_chain",
+  "dns_srv_discover",
+  "dns_wildcard_check",
+  "whois_domain",
+  "whois_ip",
+  "crtsh_search",
+  "geoip_lookup",
+  "geoip_batch",
+  "bgp_asn",
+  "bgp_ip",
+  "bgp_prefix",
+  "wayback_urls",
+  "wayback_snapshots",
+  "hackertarget_hostsearch",
+  "hackertarget_reverseip",
+  "hackertarget_aslookup",
+  "m365_tenant",
+  "m365_userrealm",
+  "osint_list_sources",
+]

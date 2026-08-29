@@ -1,0 +1,742 @@
+{
+  "status": "ok",
+  "generator": "official-docs-pack",
+  "version": "2.9.1",
+  "generated_at": "2026-08-08T19:15:58.096Z",
+  "request": "https://github.com/openai/codex/tree/main/docs",
+  "settings": {
+    "max_pages": 120,
+    "max_depth": 3,
+    "timeout_ms": 15000,
+    "allow_hosts": [
+      "github.com"
+    ],
+    "only_host": "github.com"
+  },
+  "seeds": [
+    {
+      "url": "https://github.com/openai/codex/tree/main/docs",
+      "reason": "user-url:known-docs-host+docs-shaped-path+official-repo-docs-shaped-path",
+      "score": 190,
+      "host": "github.com",
+      "rootPath": "/openai/codex/tree/main/docs",
+      "verification": "explicit-allow-host"
+    }
+  ],
+  "pages": [
+    {
+      "path": "docs/github-com-openai-codex-tree-main-docs-39ee2870.md",
+      "title": "docs",
+      "url": "https://github.com/openai/codex/tree/main/docs",
+      "host": "github.com",
+      "depth": 0,
+      "headings": [
+        "docs",
+        "Directory actions",
+        "More options",
+        "Directory actions",
+        "More options",
+        "Latest commit",
+        "History",
+        "docs",
+        "Folders and files",
+        "parent directory"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:53.303Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-cla-md-7db5119.md",
+      "title": "CLA.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/CLA.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "CLA.md",
+        "Latest commit",
+        "History",
+        "CLA.md",
+        "File metadata and controls",
+        "Individual Contributor License Agreement (v1.0, OpenAI)",
+        "1. Definitions",
+        "2. Copyright License",
+        "3. Patent License",
+        "4. Representations",
+        "5. Miscellany"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:53.645Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-agents-md-md-cc053b11.md",
+      "title": "agents_md.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/agents_md.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "agents\\_md.md",
+        "Latest commit",
+        "History",
+        "agents\\_md.md",
+        "File metadata and controls",
+        "AGENTS.md"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:53.972Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-authentication-md-27c64b8b.md",
+      "title": "authentication.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/authentication.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "authentication.md",
+        "Latest commit",
+        "History",
+        "authentication.md",
+        "File metadata and controls",
+        "Authentication"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:54.288Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-config-md-9684087d.md",
+      "title": "config.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/config.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "config.md",
+        "Latest commit",
+        "History",
+        "config.md",
+        "File metadata and controls",
+        "Configuration",
+        "Lifecycle hooks"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:54.620Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-contributing-md-52a73553.md",
+      "title": "contributing.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/contributing.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "contributing.md",
+        "Latest commit",
+        "History",
+        "contributing.md",
+        "File metadata and controls",
+        "Contributing",
+        "Development workflow",
+        "Guidance for invited code contributions",
+        "Model metadata updates",
+        "Opening a pull request (by invitation only)",
+        "Review process",
+        "Community values",
+        "Getting help",
+        "Contributor license agreement (CLA)",
+        "Security & responsible AI"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:54.929Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-example-config-md-16eb9612.md",
+      "title": "example-config.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/example-config.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "example-config.md",
+        "Latest commit",
+        "History",
+        "example-config.md",
+        "File metadata and controls",
+        "Sample configuration"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:55.276Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-exec-md-d2188e88.md",
+      "title": "exec.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/exec.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "exec.md",
+        "Latest commit",
+        "History",
+        "exec.md",
+        "File metadata and controls",
+        "Non-interactive mode"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:55.584Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-execpolicy-md-61c01b22.md",
+      "title": "execpolicy.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/execpolicy.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "execpolicy.md",
+        "Latest commit",
+        "History",
+        "execpolicy.md",
+        "File metadata and controls",
+        "Execution policy"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:55.871Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-getting-started-md-a45aaf4b.md",
+      "title": "getting-started.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/getting-started.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "getting-started.md",
+        "Latest commit",
+        "History",
+        "getting-started.md",
+        "File metadata and controls",
+        "Getting started with Codex CLI"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:56.215Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-install-md-592a676a.md",
+      "title": "install.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/install.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "install.md",
+        "Latest commit",
+        "History",
+        "install.md",
+        "File metadata and controls",
+        "Installing & building",
+        "System requirements",
+        "DotSlash",
+        "Build from source",
+        "Clone the repository and navigate to the root of the Cargo workspace.",
+        "Install the Rust toolchain, if necessary.",
+        "Install helper tools used by the workspace justfile:",
+        "DotSlash fetches pinned development tools such as buildifier on first use.",
+        "Install nextest for the `just test` helper.",
+        "Build Codex.",
+        "Launch the TUI with a sample prompt.",
+        "After making changes, use the root justfile helpers (they default to codex-rs):",
+        "Run the relevant tests (project-specific is fastest), for example:",
+        "`just test` runs the test suite via nextest:",
+        "Avoid `--all-features` for routine local runs because it increases build",
+        "time and `target/` disk usage by compiling additional feature combinations.",
+        "Tracing / verbose logging"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:56.537Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-license-md-1a551afa.md",
+      "title": "license.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/license.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "license.md",
+        "Latest commit",
+        "History",
+        "license.md",
+        "File metadata and controls",
+        "License"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:56.864Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-open-source-fund-md-6d326e9d.md",
+      "title": "open-source-fund.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/open-source-fund.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "open-source-fund.md",
+        "Latest commit",
+        "History",
+        "open-source-fund.md",
+        "File metadata and controls",
+        "Codex open source fund"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:57.158Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-sandbox-md-dbdd8b3e.md",
+      "title": "sandbox.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/sandbox.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "sandbox.md",
+        "Latest commit",
+        "History",
+        "sandbox.md",
+        "File metadata and controls",
+        "Sandbox & approvals"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:57.473Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-skills-md-b0cec389.md",
+      "title": "skills.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/skills.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "skills.md",
+        "Latest commit",
+        "History",
+        "skills.md",
+        "File metadata and controls",
+        "Skills"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:57.774Z"
+    },
+    {
+      "path": "docs/github-com-openai-codex-blob-main-docs-slash-commands-md-b59c1df.md",
+      "title": "slash_commands.md",
+      "url": "https://github.com/openai/codex/blob/main/docs/slash_commands.md",
+      "host": "github.com",
+      "depth": 1,
+      "headings": [
+        "slash\\_commands.md",
+        "Latest commit",
+        "History",
+        "slash\\_commands.md",
+        "File metadata and controls",
+        "Slash commands"
+      ],
+      "selector": "article,main",
+      "fetched_at": "2026-08-08T19:15:58.078Z"
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Ftree%2Fmain%2Fdocs",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/features/copilot",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/ai/github-app",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/mcp",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/actions",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/codespaces",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/issues",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/code-review",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/code-quality",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/security/advanced-security",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/security/advanced-security/code-security",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/security/advanced-security/secret-protection",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/why-github",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://docs.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.blog/",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.blog/changelog",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.com/marketplace",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/features",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/enterprise",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/team",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/enterprise/startups",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/industry/nonprofits",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/use-case/app-modernization",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/use-case/devsecops",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/use-case/devops",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/use-case/ci-cd",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/use-case",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/industry/healthcare",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/industry/financial-services",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/industry/manufacturing",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/industry/government",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/industry",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/resources/articles?topic=ai",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/resources/articles?topic=software-development",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/resources/articles?topic=devops",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/resources/articles?topic=security",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/resources/articles",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/customer-stories",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/resources/events",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/resources/whitepapers",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/solutions/executive-insights",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://skills.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://support.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/orgs/community/discussions",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/trust-center",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/partners",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/resources",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/open-source/sponsors",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://securitylab.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://maintainers.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/open-source/accelerator",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://stars.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://archiveprogram.github.com/",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/topics",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/trending",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/collections",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/features/copilot/copilot-business",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/enterprise/premium-support",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/pricing",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/signup",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/login?return_to=%2Fopenai%2Fcodex",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai/codex/issues",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/pulls",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/discussions",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/actions",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/security",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/pulse",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/tree/main",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/commits/main/docs",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://docs.github.com/site-policy/privacy-policies/github-privacy-statement",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/security",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://www.githubstatus.com/",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.community/",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://support.github.com/?tags=dotcom-footer",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Fblob%2Fmain%2Fdocs%2FCLA.md",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai/codex/commits/main/docs/CLA.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/raw/refs/heads/main/docs/CLA.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Fblob%2Fmain%2Fdocs%2Fagents_md.md",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai/codex/commits/main/docs/agents_md.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/raw/refs/heads/main/docs/agents_md.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://developers.openai.com/codex/guides/agents-md",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Fblob%2Fmain%2Fdocs%2Fauthentication.md",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai/codex/commits/main/docs/authentication.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/raw/refs/heads/main/docs/authentication.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://developers.openai.com/codex/auth",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Fblob%2Fmain%2Fdocs%2Fconfig.md",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai/codex/commits/main/docs/config.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/raw/refs/heads/main/docs/config.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://developers.openai.com/codex/config-basic",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://developers.openai.com/codex/config-advanced",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://developers.openai.com/codex/config-reference",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Fblob%2Fmain%2Fdocs%2Fcontributing.md",
+      "reason": "bad-path"
+    },
+    {
+      "url": "https://github.com/openai/codex/commits/main/docs/contributing.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://github.com/openai/codex/raw/refs/heads/main/docs/contributing.md",
+      "reason": "outside-docs-root"
+    },
+    {
+      "url": "https://www.contributor-covenant.org/",
+      "reason": "outside-only-host"
+    },
+    {
+      "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fopenai%2Fcodex%2Fblob%2Fmain%2Fdocs%2Fexample-config.md",
+      "reason": "bad-path"
+    }
+  ],
+  "failures": []
+}

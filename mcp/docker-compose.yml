@@ -1,0 +1,192 @@
+name: osint-control-plane
+
+services:
+  badchars-osint-mcp:
+    build:
+      context: ./osint-mcp-server
+      dockerfile: Dockerfile
+      args:
+        UPSTREAM_COMMIT: 7611f70e6a82425f1aa1e40d964057ed5f0dcb60
+    image: osint-control-plane/badchars-osint-mcp:7611f70
+    profiles: ["mcp"]
+    environment:
+      - SHODAN_API_KEY
+      - VT_API_KEY
+      - ST_API_KEY
+      - CENSYS_API_ID
+      - CENSYS_API_SECRET
+    networks: [osint-internal, osint-egress]
+    volumes:
+      - ../cases:/case:ro
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: "no"
+
+  # No third-party image is enabled by default. Optional integrations remain
+  # disabled until canonical source, license, transport, image, and safety are
+  # verified. This keeps `docker compose config` truthful and non-invasive.
+  evidence-workspace:
+    build:
+      context: ./toolboxes
+      dockerfile: Dockerfile.workspace
+    image: osint-control-plane/evidence-workspace:0.1
+    container_name: osint-control-plane-evidence
+    profiles: ["workspace"]
+    networks: [osint-internal]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    volumes:
+      - ../cases:/workspace/cases
+    restart: "no"
+
+  # All utility services are opt-in and ephemeral. Their commands are kept
+  # deliberately small; guard.sh adds passive defaults and checks the ROE.
+  sherlock:
+    image: sherlock/sherlock:0.16.0@sha256:9d6602b98179fb15ceab88433626fb0ae603ae9880e13cab886970317fe1475f
+    profiles: ["tools"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["sherlock"]
+    environment: ["OSINT_TOOL=sherlock", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE", "OSINT_ENABLE_SENSITIVE"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  holehe:
+    build:
+      context: ./toolboxes
+      args: {TOOL_REPOSITORY: https://github.com/megadose/holehe.git, TOOL_COMMIT: 14da70f588538936b20d238783c5e28a0772a2b3}
+    image: osint-control-plane/holehe:14da70f
+    profiles: ["tools"]
+    command: ["holehe"]
+    environment: ["OSINT_TOOL=holehe", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE", "OSINT_ENABLE_SENSITIVE"]
+    volumes: ["../cases:/case:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  maigret:
+    image: soxoj/maigret:af3de56@sha256:927e9c59def511f56837171253b9c96ef0467c6f95df2fd5dc5c0ed5b0f089b6
+    profiles: ["tools"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["maigret"]
+    environment: ["OSINT_TOOL=maigret", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE", "OSINT_ENABLE_SENSITIVE"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  theharvester:
+    build:
+      context: ./toolboxes
+      args:
+        PYTHON_IMAGE: python:3.14-slim-bookworm@sha256:6e9a7d1f48cf0127a5be29b58dba0c7f1b59c118619f011b7a6fca28d00adfd4
+        TOOL_REPOSITORY: https://github.com/laramies/theHarvester.git
+        TOOL_COMMIT: c44b8fde57e98d5b0c7e69910f6adee8cfc6dcff
+    image: osint-control-plane/theharvester:c44b8f
+    profiles: ["tools"]
+    command: ["theHarvester"]
+    environment: ["OSINT_TOOL=theharvester", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE"]
+    volumes: ["../cases:/case:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  spiderfoot:
+    build:
+      context: ./toolboxes
+      args: {TOOL_REPOSITORY: https://github.com/smicallef/spiderfoot.git, TOOL_COMMIT: 0f815a203afebf05c98b605dba5cf0475a0ee5fd}
+    image: osint-control-plane/spiderfoot:0f815a
+    profiles: ["tools"]
+    command: ["sf.py"]
+    environment: ["OSINT_TOOL=spiderfoot", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE"]
+    volumes: ["../cases:/case:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  amass:
+    image: owaspamass/amass:v5.1.1@sha256:a7596ae99637be30b43959d3e6f85d2051671662b49fb6388c5a4625db5eb505
+    profiles: ["tools"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["amass"]
+    environment: ["OSINT_TOOL=amass", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  subfinder:
+    image: projectdiscovery/subfinder:v2.16.0@sha256:3f28ec2fb6ee5faf608d140ab10d685b8cc8c7791d8f6a3bb7a2e47c62135ef0
+    profiles: ["tools"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["subfinder"]
+    environment: ["OSINT_TOOL=subfinder", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  httpx:
+    image: projectdiscovery/httpx:v1.10.0@sha256:8f5f5ccf479bdbefadb3de7dfb7e20870d9c76e414a21393d0aa78095461a951
+    profiles: ["tools"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["httpx"]
+    environment: ["OSINT_TOOL=httpx", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE", "OSINT_ENABLE_LOW_IMPACT_HTTP"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  nuclei:
+    image: projectdiscovery/nuclei:v3.11.1@sha256:9fd705284ac4b5f721fa1e23bf366f26e985cd4ec65927fe9a53cb3fcb0417a6
+    profiles: ["tools"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["nuclei"]
+    environment: ["OSINT_TOOL=nuclei", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE", "OSINT_ENABLE_VULN_TEMPLATES"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  gitleaks:
+    image: zricethezav/gitleaks:v8.30.1@sha256:b109bc5f8f76a38196a3e413704fc5b9e3c32360bce4e4b603bd6f45b3721dbb
+    profiles: ["scanners"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["gitleaks", "detect", "--source", "/case"]
+    environment: ["OSINT_TOOL=gitleaks", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+  trufflehog:
+    image: trufflesecurity/trufflehog:3.97.1@sha256:da3365e98ab735336733fc90cc22af8413a6d9fc1e6da5412e781daeb2d14663
+    profiles: ["scanners"]
+    entrypoint: ["/opt/osint/guard.sh"]
+    command: ["trufflehog", "filesystem", "/case"]
+    environment: ["OSINT_TOOL=trufflehog", "OSINT_CASE_ID", "OSINT_TARGET", "OSINT_SCOPE"]
+    volumes: ["../cases:/case:ro", "./toolboxes/guard.sh:/opt/osint/guard.sh:ro", "./toolboxes/redact-output.sh:/opt/osint/redact-output.sh:ro"]
+    networks: [osint-internal, osint-egress]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+
+networks:
+  osint-internal:
+    name: osint-control-plane-internal
+    internal: true
+  osint-egress:
+    name: osint-control-plane-egress

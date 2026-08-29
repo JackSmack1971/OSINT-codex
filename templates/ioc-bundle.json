@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "case_id": "CASE-YYYYMMDD-HHMMSS-target",
+  "generated_at_utc": "2026-08-27T17:00:00Z",
+  "iocs": [
+    {
+      "value": "example.com",
+      "type": "domain",
+      "first_observed": "2026-08-27T17:00:00Z",
+      "last_observed": "2026-08-27T17:00:00Z",
+      "confidence": "medium",
+      "source_ids": ["SRC-0001"],
+      "case_id": "CASE-YYYYMMDD-HHMMSS-target",
+      "context": "Source-supported context and why this indicator is exported."
+    }
+  ]
+}
